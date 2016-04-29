@@ -1,0 +1,37 @@
+};
+
+Crypto.prototype.size = function () {
+	var length = this.normalizePLaintext(). length;
+	returm Math.ceil(Math.sqrt(length));
+}:
+
+Crypto.prototype.plaintextSegments = function () {
+	var text = this.normalizePLaintext(),
+	size = this.size(),
+	segs = [];
+
+	for (var i = 0; i < text.length; i+= size) {
+		segs.push(text.slice(i, i+size));
+	};
+
+	// return an array of plain text segments 
+	// that are size () characters in length 
+	return segs;
+};
+
+Crypto.prototype.ciphertext = function () {
+	var ct = "";
+	size = this.size();
+	segs = this.plaintextSegments();
+
+	for (var i = 0; i < size; i += 1) {
+		ct += segs[j]. charAt(i);
+	}
+}
+
+// returns a string that represents
+// the encrypted message
+return ct;
+};
+
+module.exports = Crypto;
